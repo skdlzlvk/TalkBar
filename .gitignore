@@ -1,0 +1,11 @@
+.gradle/
+.kotlin/
+build/
+local.properties
+.idea/
+*.iml
+# 출시 서명 키 (절대 올리지 않기)
+keystore.properties
+*.jks
+*.keystore
+.DS_Store

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  클라우드 백업·기기 간 이동(스마트 스위치 등) 모두에서 앱 데이터를 뺀다.
+  안드로이드 12+는 allowBackup="false"만으로는 기기 간 이동을 막지 않는다. 기록에 보낸 사람·방 이름이 들어 있어서.
+-->
+<data-extraction-rules>
+    <cloud-backup>
+        <exclude domain="root" path="." />
+        <exclude domain="file" path="." />
+        <exclude domain="database" path="." />
+        <exclude domain="sharedpref" path="." />
+        <exclude domain="external" path="." />
+    </cloud-backup>
+    <device-transfer>
+        <exclude domain="root" path="." />
+        <exclude domain="file" path="." />
+        <exclude domain="database" path="." />
+        <exclude domain="sharedpref" path="." />
+        <exclude domain="external" path="." />
+    </device-transfer>
+</data-extraction-rules>

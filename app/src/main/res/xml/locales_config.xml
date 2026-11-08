@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 안드로이드 13+ '앱 언어' 설정에 나오는 언어 목록. 언어를 추가하면 여기와 res/values-xx/strings.xml 둘 다. -->
+<locale-config xmlns:android="http://schemas.android.com/apk/res/android">
+    <locale android:name="en" />
+    <locale android:name="ko" />
+</locale-config>

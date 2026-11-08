@@ -1,0 +1,5 @@
+<resources>
+    <!-- 알림 색: Now Bar 칩·카드 아이콘 배경. 흰 아이콘·글자가 잘 보이게 진한 보라 (카톡 노랑과 구별). -->
+    <color name="accent">#FF7C3AED</color>
+    <color name="launcher_bg">#FF1E2A33</color>
+</resources>

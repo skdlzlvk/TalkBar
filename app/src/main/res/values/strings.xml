@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  English (default). Every language falls back to this file.
+  To add a language: copy this file to res/values-xx/strings.xml, translate it, and add xx to res/xml/locales_config.xml.
+-->
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name">TalkBar</string>
+    <string name="listener_label">TalkBar · reads notifications</string>
+    <string name="tagline">Shows new notifications from KakaoTalk and other apps you choose in the Now Bar on the lock screen and Always On Display.</string>
+
+    <!-- Main screen: sections -->
+    <string name="section_setup">1. Setup</string>
+    <string name="section_apps">2. Apps</string>
+    <string name="section_options">3. Options</string>
+    <string name="section_test">4. Test</string>
+    <string name="section_log">5. Log</string>
+
+    <!-- Main screen: setup checks -->
+    <string name="check_listener">Notification access</string>
+    <string name="hint_listener">Lets the app read notifications from the apps you choose. If the switch is greyed out: App info → ⋮ (top right) → ‘Allow restricted settings’, then turn it on again.</string>
+    <string name="check_post_notifications">Show notifications</string>
+    <string name="check_live_updates">Allow Live Updates</string>
+    <string name="hint_live_updates">If this is off, the notification won’t go to the Now Bar.</string>
+    <string name="check_samsung_nowbar">Samsung Now Bar (developer option)</string>
+    <string name="hint_samsung_nowbar">Settings → Developer options → turn on ‘Live notifications for all apps’. Without it, Samsung only lets partner apps into the Now Bar. No Developer options? Settings → About phone → Software information → tap ‘Build number’ 7 times. Turning all developer options off also turns this off (turning off only USB debugging is fine).</string>
+    <string name="check_samsung_live_info">‘Live notifications’ in this app’s notification settings</string>
+    <string name="hint_samsung_live_info">If this app’s notification settings show a ‘Live notifications’ switch, turn it on. If there’s no such switch, skip this.</string>
+    <string name="check_turn_screen_on">Allow turning the screen on</string>
+    <string name="hint_turn_screen_on">Lets the app turn the screen on for new notifications. If the screen doesn’t turn on, turn on ‘Allow turning the screen on’ for this app.</string>
+    <string name="check_battery">Battery: Unrestricted</string>
+    <string name="hint_battery">Keeps battery saving from disconnecting the notification reader. App info → Battery → Unrestricted.</string>
+    <string name="btn_settings">Settings</string>
+    <string name="btn_open">Open</string>
+
+    <!-- Main screen: status -->
+    <string name="info_listener">Notification reader</string>
+    <string name="listener_connected">connected</string>
+    <string name="listener_disconnected">not connected</string>
+    <string name="info_status">Now</string>
+    <string name="info_verdict">System check</string>
+
+    <!-- Main screen and app picker: apps -->
+    <!-- "Showing: KakaoTalk, Messages" -->
+    <string name="apps_summary">Showing: %s</string>
+    <string name="apps_none">No apps chosen, so nothing will be shown.</string>
+    <string name="btn_choose_apps">Choose apps</string>
+    <string name="apps_title">Choose apps</string>
+    <string name="apps_hint">Notifications from the apps you turn on go to the Now Bar. Music, calls, navigation, ads and other ongoing notifications are left out.</string>
+    <string name="apps_search">Search apps</string>
+    <string name="apps_loading">Loading apps…</string>
+    <string name="btn_done">Done</string>
+
+    <!-- Main screen: options -->
+    <string name="opt_enabled">Enable</string>
+    <string name="opt_show_content">Show notification text</string>
+    <string name="hint_show_content">When off, only the sender or title is shown. People near you can see the Always On Display.</string>
+    <string name="opt_skip_muted">Skip silent notifications</string>
+    <string name="hint_skip_muted">Notifications that arrive without sound, like KakaoTalk chats you muted, won’t be shown.</string>
+    <string name="opt_wake">Turn the screen on for new notifications</string>
+    <string name="hint_wake">Like an iPhone: the screen lights up so you can see the Now Bar right away. Not when the phone is in a pocket or face down, for silent notifications, or during Do Not Disturb.</string>
+    <string name="opt_accept_shell">Accept shell test notifications (developer)</string>
+    <string name="hint_accept_shell">Handles notifications sent with adb ‘cmd notification post’ as if they came from a chosen app.</string>
+    <string name="on">on</string>
+    <string name="off">off</string>
+
+    <!-- Main screen: test -->
+    <string name="test_hint">Show a test notification, then turn the screen off and check the Always On Display and lock screen.</string>
+    <string name="btn_test">Show test</string>
+    <string name="btn_clear">Clear</string>
+    <string name="btn_test_later">Test screen wake in %d s</string>
+    <string name="test_later_hint" tools:ignore="PluralsCandidate">Tap it, then turn the screen off right away. After %d seconds the screen should turn on by itself and show the Now Bar.</string>
+    <string name="test_sender">Test</string>
+    <string name="test_text">If you can see this in the Now Bar, it works</string>
+
+    <!-- Main screen: log -->
+    <string name="btn_refresh">Refresh</string>
+    <string name="btn_clear_log">Clear log</string>
+    <string name="log_empty">No log yet</string>
+    <string name="structure_title">Last notification layout (text shown as length only)</string>
+    <string name="structure_empty">No notification received yet</string>
+
+    <!-- Now Bar notification -->
+    <string name="channel_name">Now Bar</string>
+    <string name="channel_description">Shows new notifications from the apps you chose in the Now Bar. Sound and vibration come from those apps.</string>
+    <string name="new_message">New notification</string>
+    <!-- Collapsed Now Bar card, first line when several notifications are waiting: "Mom and 2 more" -->
+    <string name="first_line_more" tools:ignore="PluralsCandidate">%1$s and %2$d more</string>
+    <plurals name="items_count">
+        <item quantity="one">%d notification</item>
+        <item quantity="other">%d notifications</item>
+    </plurals>
+    <plurals name="messages_count">
+        <item quantity="one">%d message</item>
+        <item quantity="other">%d messages</item>
+    </plurals>
+    <plurals name="new_messages_count">
+        <item quantity="one">%d new notification</item>
+        <item quantity="other">%d new notifications</item>
+    </plurals>
+    <plurals name="chars_count">
+        <item quantity="one">%d char</item>
+        <item quantity="other">%d chars</item>
+    </plurals>
+
+    <!-- Status ("Now: …") -->
+    <string name="status_never">nothing shown yet</string>
+    <string name="status_nothing">nothing to show</string>
+    <string name="status_off">turned off</string>
+    <string name="status_no_permission">no permission to show notifications</string>
+    <!-- "showing 2 notifications · Live Update shape OK · promotion allowed" -->
+    <string name="status_showing">showing %1$s · %2$s · %3$s</string>
+    <string name="shape_ok">Live Update shape OK</string>
+    <string name="shape_bad">not a Live Update shape</string>
+    <string name="promotion_allowed">promotion allowed</string>
+    <string name="promotion_off">promotion turned off</string>
+    <string name="verdict_promoted">promoted to a Live Update ✅</string>
+    <string name="verdict_not_promoted">not promoted (shown as a normal notification)</string>
+    <string name="verdict_unknown">not checked yet</string>
+
+    <!-- Log -->
+    <string name="log_listener_connected">Notification reader connected</string>
+    <string name="log_listener_disconnected">Notification reader disconnected → asking to reconnect</string>
+    <!-- "Received: KakaoTalk · Mom (12 chars, new_message_v1)" -->
+    <string name="log_received">Received: %1$s · %2$s (%3$s, %4$s)</string>
+    <string name="log_skipped">Skipped: %s</string>
+    <string name="log_removed">Notification gone: %s</string>
+    <string name="log_cant_read_active">Couldn’t read the current notifications</string>
+    <plurals name="log_resynced">
+        <item quantity="one">Re-read current notifications: %d to show</item>
+        <item quantity="other">Re-read current notifications: %d to show</item>
+    </plurals>
+    <string name="log_verdict">System check: %s</string>
+    <string name="log_dismissed">Now Bar notification dismissed → hidden until a new notification</string>
+    <string name="log_test_shown">Test notification shown</string>
+    <string name="log_test_cleared">Test notifications cleared</string>
+    <string name="log_test_scheduled">Test notification in %d s. Turn the screen off now.</string>
+    <string name="log_option_changed">Option: %1$s = %2$s</string>
+    <string name="log_app_toggled">App: %1$s = %2$s</string>
+    <string name="log_cant_open_settings">Couldn’t open settings: %s</string>
+    <string name="log_wake_on">Screen turned on</string>
+    <string name="log_wake_skipped">Screen not turned on: %s</string>
+
+    <!-- Why a notification was removed -->
+    <string name="reason_click">tapped</string>
+    <string name="reason_cancel">swiped away</string>
+    <string name="reason_cancel_all">all cleared</string>
+    <string name="reason_app_cancel">removed by the app (read)</string>
+    <string name="reason_app_cancel_all">all removed by the app</string>
+    <string name="reason_group_summary">group removed</string>
+    <string name="reason_timeout">timed out</string>
+    <string name="reason_other">reason %d</string>
+
+    <!-- Why a notification was skipped -->
+    <string name="skip_group_summary">group summary</string>
+    <string name="skip_ongoing">ongoing notification (music, calls, navigation…)</string>
+    <string name="skip_category">kind not shown in the Now Bar (category=%s)</string>
+    <string name="skip_muted">silent notification (channel=%1$s, importance=%2$d)</string>
+    <string name="skip_empty">empty notification</string>
+
+    <!-- Why the screen was not turned on -->
+    <string name="wake_skip_not_alerting">silent notification (muted or Do Not Disturb)</string>
+    <string name="wake_skip_cooldown">turned on just a moment ago</string>
+    <string name="wake_skip_no_permission">‘Allow turning the screen on’ is off</string>
+    <string name="wake_skip_covered">in a pocket or face down</string>
+    <string name="wake_skip_blocked">the system didn’t turn it on</string>
+</resources>

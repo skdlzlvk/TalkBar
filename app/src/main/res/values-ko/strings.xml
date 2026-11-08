@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 한국어. 키는 res/values/strings.xml(영어 기본)과 같아야 한다. 빠진 키는 영어로 나온다. -->
+<resources>
+    <string name="app_name">톡바</string>
+    <string name="listener_label">톡바 · 알림 읽기</string>
+    <string name="tagline">카톡 등 고른 앱의 새 알림을 Now Bar(잠금화면·AOD)에 띄워요.</string>
+
+    <!-- 메인 화면: 구역 -->
+    <string name="section_setup">1. 처음 설정</string>
+    <string name="section_apps">2. 앱 고르기</string>
+    <string name="section_options">3. 옵션</string>
+    <string name="section_test">4. 테스트</string>
+    <string name="section_log">5. 기록</string>
+
+    <!-- 메인 화면: 설정 확인 -->
+    <string name="check_listener">알림 접근 허용</string>
+    <string name="hint_listener">고른 앱의 알림을 읽는 권한이에요. 스위치가 회색으로 막혀 있으면 앱 정보 → 오른쪽 위 ⋮ → ‘제한된 설정 허용’ 후 다시 켜세요.</string>
+    <string name="check_post_notifications">알림 표시 권한</string>
+    <string name="check_live_updates">실시간 알림(Live Update) 허용</string>
+    <string name="hint_live_updates">꺼져 있으면 Now Bar에 안 올라가요.</string>
+    <string name="check_samsung_nowbar">삼성 Now Bar 허용 (개발자 옵션)</string>
+    <string name="hint_samsung_nowbar">설정 → 개발자 옵션 → ‘모든 앱의 실시간 정보 보기’를 켜야 Now Bar에 올라가요. 이게 꺼져 있으면 삼성은 제휴 앱만 Now Bar에 띄워요. 개발자 옵션이 없으면: 설정 → 휴대전화 정보 → 소프트웨어 정보 → ‘빌드번호’를 7번 누르세요. 개발자 옵션 전체를 끄면 이것도 꺼져요 (USB 디버깅만 끄는 건 괜찮아요).</string>
+    <string name="check_samsung_live_info">앱 알림 설정의 ‘실시간 정보’</string>
+    <string name="hint_samsung_live_info">이 앱 알림 설정에 ‘실시간 정보’ 스위치가 보이면 켜세요. 없으면 넘어가도 돼요.</string>
+    <string name="check_turn_screen_on">화면 켜기 허용</string>
+    <string name="hint_turn_screen_on">새 알림에 화면을 켜는 권한이에요. 화면이 안 켜지면 이 앱의 ‘화면 켜기 허용’을 켜세요.</string>
+    <string name="check_battery">배터리 사용 제한 없음</string>
+    <string name="hint_battery">절전 기능이 알림 읽기를 끊지 않게 해요. 앱 정보 → 배터리 → ‘제한 없음’을 고르세요.</string>
+    <string name="btn_settings">설정</string>
+    <string name="btn_open">열기</string>
+
+    <!-- 메인 화면: 상태 -->
+    <string name="info_listener">리스너 연결</string>
+    <string name="listener_connected">연결됨</string>
+    <string name="listener_disconnected">끊김</string>
+    <string name="info_status">지금 상태</string>
+    <string name="info_verdict">시스템 판정</string>
+
+    <!-- 메인 화면·앱 고르기: 앱 -->
+    <string name="apps_summary">띄우는 앱: %s</string>
+    <string name="apps_none">고른 앱이 없어서 아무것도 안 떠요.</string>
+    <string name="btn_choose_apps">앱 고르기</string>
+    <string name="apps_title">앱 고르기</string>
+    <string name="apps_hint">켠 앱의 알림이 Now Bar에 떠요. 음악·통화·내비·광고처럼 계속 떠 있거나 알릴 필요 없는 알림은 빼요.</string>
+    <string name="apps_search">앱 검색</string>
+    <string name="apps_loading">앱 목록 불러오는 중…</string>
+    <string name="btn_done">완료</string>
+
+    <!-- 메인 화면: 옵션 -->
+    <string name="opt_enabled">사용하기</string>
+    <string name="opt_show_content">알림 내용 표시</string>
+    <string name="hint_show_content">끄면 보낸 사람이나 제목만 보여요. AOD는 옆 사람도 볼 수 있어요.</string>
+    <string name="opt_skip_muted">조용한 알림 제외</string>
+    <string name="hint_skip_muted">알림 끈 카톡방처럼 소리 없이 오는 알림은 안 띄워요.</string>
+    <string name="opt_wake">새 알림이 오면 화면 켜기</string>
+    <string name="hint_wake">아이폰처럼 화면이 켜져서 Now Bar를 바로 볼 수 있어요. 주머니 속·뒤집어 둔 상태, 조용한 알림, 방해 금지 중엔 켜지 않아요.</string>
+    <string name="opt_accept_shell">셸 테스트 알림도 받기 (개발용)</string>
+    <string name="hint_accept_shell">adb의 ‘cmd notification post’로 보낸 알림을 고른 앱 알림처럼 처리해요.</string>
+    <string name="on">켬</string>
+    <string name="off">끔</string>
+
+    <!-- 메인 화면: 테스트 -->
+    <string name="test_hint">테스트 알림을 띄운 뒤 화면을 끄고 AOD와 잠금화면을 확인해보세요.</string>
+    <string name="btn_test">테스트 알림 띄우기</string>
+    <string name="btn_clear">지우기</string>
+    <string name="btn_test_later">%d초 뒤 화면 켜기 테스트</string>
+    <string name="test_later_hint">누르고 바로 화면을 끄세요. %d초 뒤 화면이 저절로 켜지면서 Now Bar가 보이면 성공이에요.</string>
+    <string name="test_sender">테스트</string>
+    <string name="test_text">Now Bar에 이 글자가 보이면 성공</string>
+
+    <!-- 메인 화면: 기록 -->
+    <string name="btn_refresh">새로고침</string>
+    <string name="btn_clear_log">기록 지우기</string>
+    <string name="log_empty">기록 없음</string>
+    <string name="structure_title">마지막 알림 구조 (내용은 글자 수만)</string>
+    <string name="structure_empty">아직 받은 알림 없음</string>
+
+    <!-- Now Bar 알림 -->
+    <string name="channel_name">Now Bar 표시</string>
+    <string name="channel_description">고른 앱의 새 알림을 Now Bar에 띄워요. 소리·진동은 원래 앱이 내요.</string>
+    <string name="new_message">새 알림</string>
+    <!-- 접힌 Now Bar 카드 첫 줄 (알림이 여러 개일 때): "엄마 외 2개" -->
+    <string name="first_line_more">%1$s 외 %2$d개</string>
+    <plurals name="items_count">
+        <item quantity="other">알림 %d개</item>
+    </plurals>
+    <plurals name="messages_count">
+        <item quantity="other">메시지 %d개</item>
+    </plurals>
+    <plurals name="new_messages_count">
+        <item quantity="other">새 알림 %d개</item>
+    </plurals>
+    <plurals name="chars_count">
+        <item quantity="other">%d자</item>
+    </plurals>
+
+    <!-- 상태 ("지금 상태: …") -->
+    <string name="status_never">아직 띄운 적 없음</string>
+    <string name="status_nothing">보여줄 알림 없음</string>
+    <string name="status_off">꺼짐</string>
+    <string name="status_no_permission">알림 표시 권한 없음</string>
+    <string name="status_showing">표시 중: %1$s · %2$s · %3$s</string>
+    <string name="shape_ok">Live Update 형식 맞음</string>
+    <string name="shape_bad">Live Update 형식 아님</string>
+    <string name="promotion_allowed">승격 허용됨</string>
+    <string name="promotion_off">승격 꺼짐</string>
+    <string name="verdict_promoted">Live Update로 승격됨 ✅</string>
+    <string name="verdict_not_promoted">승격 안 됨 (일반 알림으로 표시)</string>
+    <string name="verdict_unknown">확인 전</string>
+
+    <!-- 기록 -->
+    <string name="log_listener_connected">리스너 연결됨</string>
+    <string name="log_listener_disconnected">리스너 끊김 → 다시 연결 요청</string>
+    <string name="log_received">받음: %1$s · %2$s (%3$s, %4$s)</string>
+    <string name="log_skipped">건너뜀: %s</string>
+    <string name="log_removed">알림 사라짐: %s</string>
+    <string name="log_cant_read_active">떠 있는 알림을 못 읽음</string>
+    <plurals name="log_resynced">
+        <item quantity="other">떠 있는 알림 다시 읽음: %d개 표시</item>
+    </plurals>
+    <string name="log_verdict">시스템 판정: %s</string>
+    <string name="log_dismissed">Now Bar 알림을 지움 → 새 알림이 올 때까지 숨김</string>
+    <string name="log_test_shown">테스트 알림 띄움</string>
+    <string name="log_test_cleared">테스트 알림 지움</string>
+    <string name="log_test_scheduled">%d초 뒤 테스트 알림. 지금 화면을 끄세요.</string>
+    <string name="log_option_changed">옵션 변경: %1$s = %2$s</string>
+    <string name="log_app_toggled">앱 선택: %1$s = %2$s</string>
+    <string name="log_cant_open_settings">설정 화면을 못 엶: %s</string>
+    <string name="log_wake_on">화면 켬</string>
+    <string name="log_wake_skipped">화면 안 켬: %s</string>
+
+    <!-- 알림이 사라진 이유 -->
+    <string name="reason_click">눌러서 열림</string>
+    <string name="reason_cancel">밀어서 지움</string>
+    <string name="reason_cancel_all">모두 지우기</string>
+    <string name="reason_app_cancel">앱이 지움 (읽음)</string>
+    <string name="reason_app_cancel_all">앱이 모두 지움</string>
+    <string name="reason_group_summary">묶음이 지워짐</string>
+    <string name="reason_timeout">시간 초과</string>
+    <string name="reason_other">이유 %d</string>
+
+    <!-- 알림을 건너뛴 이유 -->
+    <string name="skip_group_summary">묶음 요약</string>
+    <string name="skip_ongoing">계속 떠 있는 알림 (음악·통화·내비 등)</string>
+    <string name="skip_category">Now Bar에 안 띄우는 종류 (category=%s)</string>
+    <string name="skip_muted">조용한 알림 (channel=%1$s, 중요도=%2$d)</string>
+    <string name="skip_empty">내용 없는 알림</string>
+
+    <!-- 화면을 안 켠 이유 -->
+    <string name="wake_skip_not_alerting">조용한 알림 (무음·방해 금지)</string>
+    <string name="wake_skip_cooldown">방금 켰음</string>
+    <string name="wake_skip_no_permission">‘화면 켜기 허용’이 꺼져 있음</string>
+    <string name="wake_skip_covered">주머니 속·뒤집힘</string>
+    <string name="wake_skip_blocked">시스템이 안 켜줌</string>
+</resources>

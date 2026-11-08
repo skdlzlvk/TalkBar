@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <!-- Live Update(승격 알림) 요청 권한. 런타임 팝업 없는 일반 권한. -->
+    <uses-permission android:name="android.permission.POST_PROMOTED_NOTIFICATIONS" />
+    <!-- 새 알림이 오면 화면 켜기. 안드로이드 14+는 TURN_SCREEN_ON + 앱별 '화면 켜기 허용'이 있어야 켜진다. -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.TURN_SCREEN_ON" />
+    <!-- 인터넷 권한 없음: 알림 내용이 폰 밖으로 나갈 길이 없다. -->
+
+    <!--
+      앱 고르기 목록(런처에 보이는 앱)과 앱 이름·아이콘, 알림을 눌렀을 때 그 앱 열기.
+      모든 앱 보기(QUERY_ALL_PACKAGES)는 스토어가 제한하는 권한이라 런처 앱만 본다.
+    -->
+    <queries>
+        <package android:name="com.kakao.talk" />
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent>
+    </queries>
+
+    <application
+        android:allowBackup="false"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:localeConfig="@xml/locales_config"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".AppPickerActivity"
+            android:exported="false"
+            android:label="@string/apps_title"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- 이름이 Kakao…인 건 처음 카톡 전용이던 때 그대로다. 바꾸면 사용자가 준 '알림 접근'이 풀린다. -->
+        <service
+            android:name=".KakaoListenerService"
+            android:exported="true"
+            android:label="@string/listener_label"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService" />
+            </intent-filter>
+        </service>
+
+        <!-- Now Bar 알림을 사용자가 지웠을 때. -->
+        <receiver
+            android:name=".DismissReceiver"
+            android:exported="false" />
+    </application>
+</manifest>

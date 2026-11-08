@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  톡바 아이콘: 보라 말풍선(점 세 개는 구멍)이 잠금화면 막대(Now Bar) 위에 떨어지는 모양.
+  카톡과 헷갈리지 않게 노랑은 쓰지 않는다. 내용은 가운데 66dp 안전 영역 안 (x 34–74, y 30–79).
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <group
+        android:scaleX="2"
+        android:scaleY="2"
+        android:translateX="30"
+        android:translateY="22">
+        <path
+            android:fillColor="#FFA78BFA"
+            android:fillType="evenOdd"
+            android:pathData="M4,4H20A2,2 0,0 1,22 6V16A2,2 0,0 1,20 18H10L6,22V18H4A2,2 0,0 1,2 16V6A2,2 0,0 1,4 4Z M6.75,11a1.25,1.25 0,1 0,2.5 0a1.25,1.25 0,1 0,-2.5 0Z M10.75,11a1.25,1.25 0,1 0,2.5 0a1.25,1.25 0,1 0,-2.5 0Z M14.75,11a1.25,1.25 0,1 0,2.5 0a1.25,1.25 0,1 0,-2.5 0Z" />
+    </group>
+    <path
+        android:fillColor="#E6FFFFFF"
+        android:pathData="M38,71H70A4,4 0,0 1,70 79H38A4,4 0,0 1,38 71Z" />
+</vector>
