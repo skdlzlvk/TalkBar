@@ -13,6 +13,8 @@
    - 구글 플레이: 등록비 $25. 새로 만든 개인 개발자 계정은 비공개 테스트(최소 12명, 14일 연속)를 거쳐야 정식 출시를 신청할 수 있다 (2024-12 기준 규칙, 바뀔 수 있음).
    - 갤럭시 스토어: 어차피 삼성 폰에서만 의미 있는 앱이라 잘 맞는다. 셀러 포털 심사가 있다.
    - APK 직접 배포 (GitHub Releases 등): 심사가 없다. 대신 설치할 때 '출처를 알 수 없는 앱'을 허용해야 한다. 알림 접근도 '제한된 설정'으로 막혀서, 앱 정보 → ⋮ → 제한된 설정 허용을 거쳐야 한다 (앱 첫 화면에 안내가 있다).
+     - 2026-11-09 GitHub에 올렸다: 코드 https://github.com/skdlzlvk/TalkBar, 첫 릴리스 v1.0.0 (`TalkBar-1.0.0.apk`). 다음 버전 올리는 법은 아래 "4. GitHub 릴리스".
+     - 나중에 스토어에도 내면 서명을 맞춰야 GitHub에서 깐 사용자가 업데이트를 받는다. 갤럭시 스토어는 개발자가 서명한 APK를 올리니 같은 키를 쓰면 된다. 플레이는 '플레이 앱 서명'에서 구글이 새 키를 만들게 하면 서명이 달라진다. 앱 서명 키로 이 키를 올리는 쪽('Java 키 저장소에서 키 내보내기 및 업로드')을 고른다.
      - 구글 개발자 인증: 인증된 개발자 앱이 아니면 설치가 까다로워진다 (ADB나 별도 절차 필요). 브라질·인도네시아·싱가포르·태국은 2026-09-30부터, 한국 포함 전 세계는 2027년 예정이다. 그 뒤엔 직접 배포도 구글에 개발자 등록을 해야 한다.
 3. **심사·동작 위험**
    - 구글 Live Update 가이드는 채팅 메시지를 부적절한 용도로 적어둔다. 다른 앱 알림을 옮겨 띄우는 것도 마찬가지다. 심사에서 문제 되거나, 나중 안드로이드 업데이트에서 승격이 막힐 수 있다.
@@ -24,7 +26,9 @@
 
 ## 1. 서명 키 만들기 (한 번만, 직접)
 
-키 파일과 비밀번호를 잃어버리면 같은 앱으로 업데이트를 낼 수 없다. 플레이는 '플레이 앱 서명'을 쓰므로, 이 키(업로드 키)를 잃어버려도 재설정을 신청할 수 있다. 키 파일과 `keystore.properties`는 `.gitignore`에 들어 있다.
+키 파일과 비밀번호를 잃어버리면 GitHub·갤럭시 스토어로 깐 사용자에게 업데이트를 낼 수 없다. 둘 다 따로 백업한다. 키 파일과 `keystore.properties`는 `.gitignore`에 들어 있다.
+
+2026-11-09에 만들었다: `~/keys/talkbar-upload.jks`, 별칭 `upload`, RSA 4096, 인증서 `CN=TalkBar, C=KR`, 인증서 SHA-256 `0ca65b9bdcfd767af85fd4a2f237b280b28ed96a5fb20b17f9f5ca449f949094`.
 
 ```bash
 mkdir -p ~/keys
@@ -56,7 +60,7 @@ JAVA_HOME=$(/usr/libexec/java_home -v 21) ./gradlew assembleRelease
 - 플레이: `app/build/outputs/bundle/release/app-release.aab`
 - 갤럭시 스토어·직접 배포: `app/build/outputs/apk/release/app-release.apk`
 - 업데이트를 낼 때마다 `app/build.gradle.kts`의 `versionCode`를 1 올리고 `versionName`을 바꾼다.
-- 출시 빌드에는 adb 테스트 수신기와 "셸 테스트 알림" 옵션이 없다. R8로 줄여서 APK가 110KB쯤이다. 2026-11-08 폴드8에서 출시 빌드를 디버그 키로 서명해 설치해봤다: 리스너 연결·첫 화면 정상. 2026-11-09에 넣은 "앱 고르기"는 폴드8에서 개발 빌드로 확인했다: 다른 앱 알림의 승격, 화면 켜기, 잠금화면·AOD 카드가 정상이다. Now Bar 카드 아이콘은 어느 앱 알림이든 톡바 아이콘이다 (삼성이 정함). 그래서 앱을 2개 이상 고르면 카드 첫 줄에 앱 이름을 붙인다. 스크린샷·설명문이 이와 어긋나지 않게 한다.
+- 출시 빌드에는 adb 테스트 수신기와 "셸 테스트 알림" 옵션이 없다. R8로 줄여서 APK가 117KB쯤이다 (1.0.0). 2026-11-09 출시 키로 서명한 1.0.0을 에뮬레이터(안드로이드 16)에 깔아 첫 화면·앱 고르기·테스트 알림이 정상인 것을 확인했다. 2026-11-08 폴드8에서 출시 빌드를 디버그 키로 서명해 설치해봤다: 리스너 연결·첫 화면 정상. 2026-11-09에 넣은 "앱 고르기"는 폴드8에서 개발 빌드로 확인했다: 다른 앱 알림의 승격, 화면 켜기, 잠금화면·AOD 카드가 정상이다. Now Bar 카드 아이콘은 어느 앱 알림이든 톡바 아이콘이다 (삼성이 정함). 그래서 앱을 2개 이상 고르면 카드 첫 줄에 앱 이름을 붙인다. 스크린샷·설명문이 이와 어긋나지 않게 한다.
 
 ## 3. 스토어에 적을 것
 
@@ -106,3 +110,19 @@ Full description (en)
 > Requires a Galaxy phone with Android 16 or later (lock screen and AOD display need One UI 9). Because this is not a Samsung partner app, turn on Settings → Developer options → ‘Live notifications for all apps’.
 >
 > Independent app, not affiliated with Kakao or Samsung. KakaoTalk is a trademark of Kakao Corp.
+
+## 4. GitHub 릴리스 (직접 배포)
+
+저장소: https://github.com/skdlzlvk/TalkBar (공개, MIT). 첫 릴리스 v1.0.0은 2026-11-09.
+
+1. `app/build.gradle.kts`의 `versionCode`를 1 올리고 `versionName`을 바꾼다.
+2. 위 "2. 빌드"의 `assembleRelease`로 APK를 만든다.
+3. 서명을 확인한다. 인증서 SHA-256이 `0ca65b9b…f949094`(위 "1. 서명 키")와 같아야 사용자 폰에서 업데이트로 깔린다. apksigner는 Android SDK `build-tools` 폴더에 있다.
+   ```bash
+   apksigner verify --print-certs app/build/outputs/apk/release/app-release.apk
+   ```
+4. 파일 이름을 `TalkBar-<버전>.apk`로 바꿔서 올린다. 릴리스 노트에는 설치 방법(한/영)과 APK·인증서 SHA-256을 적는다.
+   ```bash
+   gh release create v<버전> TalkBar-<버전>.apk --title "톡바 <버전>" --notes-file <릴리스 노트 파일>
+   ```
+5. README의 파일 이름(`TalkBar-1.0.0.apk`)을 새 버전으로 바꾼다.

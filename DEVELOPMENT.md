@@ -73,7 +73,7 @@ adb install -r app/build/outputs/apk/debug/app-debug.apk
 - 에뮬레이터도 켜져 있으면 `adb -s <폰 시리얼> …`로 폰을 고른다 (시리얼은 `adb devices`로 확인).
 - AGP 8.13.2 · Kotlin 2.3.0 · Gradle 8.14 · compileSdk/targetSdk 36 · minSdk 36. 외부 라이브러리 없음. 인터넷 권한 없음.
 - 개발(debug) 빌드에만 있는 것: adb 테스트 수신기(`src/debug`), "셸 테스트 알림도 받기" 옵션.
-- 출시(release) 빌드: R8로 줄여서 APK가 100KB쯤. 서명·업로드는 [RELEASE.md](RELEASE.md).
+- 출시(release) 빌드: R8로 줄여서 APK가 117KB쯤 (1.0.0). 서명·업로드는 [RELEASE.md](RELEASE.md).
 
 ## 폰에서 처음 설정
 
